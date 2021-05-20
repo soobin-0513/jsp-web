@@ -3,7 +3,7 @@
 
 <% request.setCharacterEncoding("utf-8"); %>
 <%
-pageContext.setAttribute("myAttr",2);
+	pageContext.setAttribute("myAttr", 2.14);
 %>
 <!DOCTYPE html>
 <html>
@@ -15,12 +15,12 @@ pageContext.setAttribute("myAttr",2);
 </head>
 <body>
 <div class="container">
-	\${Math.round(3.14) } : ${Math.round(3.14) }<br>
-	\${Math.round(myAttr) } :${Math.round(myAttr) }
+	\${Math.round(3.14) } : ${Math.round(3.14) } <br>
+	\${Math.round(myAttr) } : ${Math.round(myAttr) } <br>
+	
 </div>
 </body>
 </html>
-
 
 
 
