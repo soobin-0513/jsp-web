@@ -4,6 +4,7 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="my" tagdir="/WEB-INF/tags/ch16/lecture" %>
 <%@ taglib prefix="tf" tagdir="/WEB-INF/tags/ch16/textbook" %>
+<%@ taglib prefix="s1" tagdir="/WEB-INF/tags/sample1" %>
 
 <% request.setCharacterEncoding("utf-8"); %>
 
@@ -31,25 +32,37 @@
 			}
 		}
 		
+		
 	</script>
 <title>내용작성 </title>
 </head>
 <body>
+
+<s1:soobinNB  />
+
 <div class="container mt-3">
-	<form name="frm" method="post">
-		<label class="mt-2 mb-3">제목</label>
-		<br>
-		<input type="text" name="title" />
-		<br>
-		<label class="mt-2 mb-3">본문</label>
-		<br>
-		<textarea name="body" ></textarea>
-		<br>
-		<input class="btn btn-primary mb-2" type="submit" value="등록" onclick="pop()" />
-		<input class="btn btn-primary mb-2" type ="button" value="취소" onclick="re()">
-		
-		
-	</form>
+<div class="row justify-content-center">
+		<div class="col-8">
+			<h1>글 쓰기</h1>
+			<form action="" method="post">
+				<div class="form-group" >
+					<label for="input1">제목</label>
+					<input type="text" name="title" class="form-control" id="input1">
+				</div>
+				<div class="form-group" >
+					<label for="input2">작성자 </label>
+					<input type="text" name="writer" class="form-control" id="input2">
+				</div>
+				<div class="form-group">
+					<label for="textarea1">본문</label>
+					<textarea class="form-control" name="body" rows="5" id="textarea1"></textarea>
+				</div>
+				<input class="btn btn-primary mb-2" type="submit" value="등록" onclick="pop()" />
+				<input class="btn btn-primary mb-2" type ="button" value="취소" onclick="re()">
+			</form>
+		</div>
+	</div>
+	
 </div>
 </body>
 </html>

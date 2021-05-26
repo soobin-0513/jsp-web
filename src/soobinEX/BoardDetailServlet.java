@@ -29,6 +29,7 @@ public class BoardDetailServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		//한글 깨지기 방지 
 		request.setCharacterEncoding("utf-8");
 		
 		String index = request.getParameter("index");
