@@ -13,6 +13,19 @@
 
 <%@ include file="/WEB-INF/subModules/bootstrapHeader.jsp" %>
 
+	<script type="text/javascript">
+		function lgout(){
+			ok =confirm("로그아웃할꺼야??");
+			if(ok){
+				location.href="loginForm.jsp";
+			}else{
+				return false;
+			}
+		}
+		
+		
+		
+	</script>
 <title>메인 페이지  </title>
 </head>
 <body>
@@ -20,7 +33,7 @@
 	<div class="row justify-content-center">
 		<div class="col-3 center mt-3">
 			<h1><%=request.getParameter("id") %>님 <span>반갑습니다. </span></h1>
-			<input class="btn btn-primary form-row" type="button" value="로그아웃"  />	
+			<input class="btn btn-primary" type="submit" value="로그아웃" onclick="lgout()"/>	
 		</div>
 	</div>
 	

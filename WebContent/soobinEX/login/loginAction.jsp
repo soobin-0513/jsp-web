@@ -9,19 +9,20 @@
 
 <%
 	//임의로 만든 로그인 가능한 아이디 비번
-	String[] users ={"soo123","bin456"};
-	String[] passwords={"qweasd","asdzxc"};
+	//String[] users ={"soo123","bin456"};
+	//String[] passwords={"qweasd","asdzxc"};
 	
 	//Form에서 전달 받은 데이터를 변수에 저장 
 	String id =request.getParameter("id");
 	String pw =request.getParameter("pw");
-
 	
-	String path="";
-	for(int i =0; i<users.length;i++){
-	if(users[i].equals(id) && passwords[i].equals(pw)){	
-		path="welcomeLogin.jsp?id=" +id;
-		
+	//for(int i =0; i<users.length;i++){
+	//	if(users[i].equals(id) && passwords[i].equals(pw)){	
+			
+	//	}
+	if(id.equals(pw)){
+	
+		response.sendRedirect("welcomeLogin.jsp");
 	
 	
 %>
@@ -39,12 +40,14 @@
 	}else{
 	%>
 	<script>
-		alert("로그인에 실패하였습니다.");
-		//다시로그인화면으로 이동하
-		history.go(-1);	
+		alert("아이디나 비밀번호를 다시 확인해주세요.");
+		//다시로그인화면으로 이동
+		location.href="loginForm.jsp";
 	</script>
 	<% 
-	}	}
+	}	
+	//}
+	
 	%>
 </div>
 </body>
