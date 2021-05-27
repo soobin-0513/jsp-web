@@ -32,7 +32,7 @@
 <div class="container">
 	<div class="row justify-content-center">
 		<div class="col-3 center mt-3">
-			<h1><%=request.getParameter("id") %>님 <span>반갑습니다. </span></h1>
+			<h1>${sessionScope.id }님 <span>반갑습니다. </span></h1>
 			<input class="btn btn-primary" type="submit" value="로그아웃" onclick="lgout()"/>	
 		</div>
 	</div>

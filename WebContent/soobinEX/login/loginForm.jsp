@@ -6,7 +6,9 @@
 <%@ taglib prefix="tf" tagdir="/WEB-INF/tags/ch16/textbook" %>
 
 <% request.setCharacterEncoding("utf-8"); %>
-
+<%
+session.invalidate();
+%>
 <!DOCTYPE html>
 <html>
 <head>

@@ -30,7 +30,7 @@
 				</div>
 				<div class="form-group" >
 					<label for="input2">작성자 </label>
-					<input type="text" name="title" class="form-control" id="input2">
+					<input type="text" name="writer" class="form-control" id="input2">
 				</div>
 				<div class="form-group">
 					<label for="textarea1">본문</label>

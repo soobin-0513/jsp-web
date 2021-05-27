@@ -21,7 +21,8 @@
 			
 	//	}
 	if(id.equals(pw)){
-	
+		session.setAttribute("id", id);
+		session.setAttribute("pw", pw);
 		response.sendRedirect("welcomeLogin.jsp");
 	
 	
