@@ -8,6 +8,7 @@ import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
 
+// 리스너는시작할때 1빠로 작동 하는거 
 /**
  * Application Lifecycle Listener implementation class BoardAppListener
  *
