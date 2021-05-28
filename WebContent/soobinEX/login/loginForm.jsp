@@ -36,7 +36,8 @@ session.invalidate();
 						<input class="btn btn-primary form-row" type="submit" value="로그인 " />				
 					</div>
 					<div class="float-right"> 
-						<input class="btn btn-primary form-row" type="button" value="회원가입"  />				
+						<a href="#" class="btn btn-primary" >회원가입 </a>
+						<!-- <input class="btn btn-primary form-row" type="button" value="회원가입"  />	 -->			
 					</div>
 				</div>
 			</form>
