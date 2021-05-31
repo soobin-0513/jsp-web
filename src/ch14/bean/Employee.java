@@ -2,8 +2,8 @@ package ch14.bean;
 
 public class Employee {
 	private int id;
-	private String lastname;
-	private String firstname;
+	private String lastName;
+	private String firstName;
 	
 	public int getId() {
 		return id;
@@ -11,17 +11,18 @@ public class Employee {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public String getLastname() {
-		return lastname;
+	public String getLastName() {
+		return lastName;
 	}
-	public void setLastname(String lastname) {
-		this.lastname = lastname;
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
 	}
-	public String getFirstname() {
-		return firstname;
+	public String getFirstName() {
+		return firstName;
 	}
-	public void setFirstname(String firstname) {
-		this.firstname = firstname;
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
 	}
+	
 	
 }
