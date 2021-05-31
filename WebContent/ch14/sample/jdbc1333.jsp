@@ -21,22 +21,38 @@
 		<thead>
 			<tr>
 				<th>ID</th>
-				<th>Last Name </th>
-				<th>First Name </th>
-				<th>Notes</th>
+				<th>Name</th>
+				<th>City</th>
 			</tr>
 		</thead>
-		<c:forEach items="${employees }" var="emp" >
-			<tbody>
+		<tbody>
+			<c:forEach items="${customers }" var="customer">
 				<tr>
-					<td>${emp.id }</td>
-					<td>${emp.lastName }</td>
-					<td>${emp.firstName }</td>
-					<td>${emp.notes }</td>	
+					<td>${customer.id }</td>
+					<td>${customer.name }</td>
+					<td>${customer.city }</td>
 				</tr>
-			</tbody>
-		</c:forEach>
+			</c:forEach>		
+		</tbody>
 	</table>
+	<div class="d-flex justify-content-center mt-3">
+		<nav aria-label="Page navigation example">
+		  <ul class="pagination">
+		    <c:forEach begin="1" end="10" var="i">
+			    <li class="page-item"><a class="page-link"
+			        href="${pageContext.request.contextPath }/JDBC1333Servlet?page=${i}">${i }</a></li>
+		    </c:forEach>
+		  </ul>
+		</nav>
+	</div>	
 </div>
 </body>
 </html>
+
+
+
+
+
+
+
+

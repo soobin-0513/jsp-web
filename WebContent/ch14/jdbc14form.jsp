@@ -17,26 +17,29 @@
 </head>
 <body>
 <div class="container">
-	<table class="table">
-		<thead>
-			<tr>
-				<th>ID</th>
-				<th>Last Name </th>
-				<th>First Name </th>
-				<th>Notes</th>
-			</tr>
-		</thead>
-		<c:forEach items="${employees }" var="emp" >
-			<tbody>
-				<tr>
-					<td>${emp.id }</td>
-					<td>${emp.lastName }</td>
-					<td>${emp.firstName }</td>
-					<td>${emp.notes }</td>	
-				</tr>
-			</tbody>
-		</c:forEach>
-	</table>
+	<h1>Add Customer </h1>
+	
+	<form action="${pageContext.request.contextPath }/JDBC14InsertServlet" method="post">
+		Customer Name : <input type="text" name="name"> <br>
+		Contact Name : <input type="text" name="contactName"> <br>
+		Address : <input type="text" name="address"> <br>
+		City: <input type="text" name="city"> <br>
+		Postal Code : <input type="text" name="postalCode" > <br>
+		Country : <input type="text" name="country"> <br>
+		<input type="submit">
+	</form>
 </div>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+

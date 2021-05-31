@@ -17,26 +17,20 @@
 </head>
 <body>
 <div class="container">
-	<table class="table">
-		<thead>
-			<tr>
-				<th>ID</th>
-				<th>Last Name </th>
-				<th>First Name </th>
-				<th>Notes</th>
-			</tr>
-		</thead>
+	<ul>
 		<c:forEach items="${employees }" var="emp" >
-			<tbody>
-				<tr>
-					<td>${emp.id }</td>
-					<td>${emp.lastName }</td>
-					<td>${emp.firstName }</td>
-					<td>${emp.notes }</td>	
-				</tr>
-			</tbody>
+			<li>${emp.id } : ${emp.lastName }, ${emp.firstName }</li>	
 		</c:forEach>
-	</table>
+	</ul>
 </div>
 </body>
 </html>
+
+
+
+
+
+
+
+
+

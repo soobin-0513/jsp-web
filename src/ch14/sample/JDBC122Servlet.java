@@ -1,4 +1,4 @@
-package ch14;
+package ch14.sample;
 
 import java.io.IOException;
 import java.sql.Connection;
@@ -20,14 +20,14 @@ import ch14.bean.Employee;
 /**
  * Servlet implementation class JDBC12Servlet
  */
-@WebServlet("/JDBC12Servlet")
-public class JDBC12Servlet extends HttpServlet {
+@WebServlet("/JDBC122Servlet")
+public class JDBC122Servlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public JDBC12Servlet() {
+    public JDBC122Servlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -41,7 +41,7 @@ public class JDBC12Servlet extends HttpServlet {
 	
 		request.setAttribute("employees", list);
 		
-		String path = "/ch14/jdbc12.jsp";
+		String path = "/ch14/sample/jdbc1222.jsp";
 		request.getRequestDispatcher(path).forward(request, response);
 	}
 	
@@ -49,10 +49,10 @@ public class JDBC12Servlet extends HttpServlet {
 
 		List<Employee> list = new ArrayList<>(); // 리턴할 객체
 		
-		String sql = "SELECT EmployeeID, LastName, FirstName, Notes " + 
+		String sql = "SELECT EmployeeID, LastName, FirstName " + 
 				"FROM Employees ";
 
-		String url = "jdbc:mysql://52.79.195.216/test"; // 본인 ip
+		String url = "jdbc:mysql://13.125.118.27/test"; // 본인 ip
 		String user = "root";
 		String password = "wnddkdwjdqhcjfl1";
 
@@ -79,7 +79,6 @@ public class JDBC12Servlet extends HttpServlet {
 				employee.setId(rs.getInt(1));
 				employee.setLastName(rs.getString(2));
 				employee.setFirstName(rs.getString(3));
-				employee.setNotes(rs.getString(4));
 				
 				list.add(employee);
 			}

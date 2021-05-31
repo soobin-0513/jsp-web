@@ -1,4 +1,4 @@
-package ch14;
+package ch14.sample;
 
 import java.io.IOException;
 import java.sql.Connection;
@@ -15,19 +15,19 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import ch14.bean.Employee;
+import ch14.bean.Customer;
 
 /**
- * Servlet implementation class JDBC12Servlet
+ * Servlet implementation class JDBC1333Servlet
  */
-@WebServlet("/JDBC12Servlet")
-public class JDBC12Servlet extends HttpServlet {
+@WebServlet("/JDBC1333Servlet")
+public class JDBC1333Servlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public JDBC12Servlet() {
+    public JDBC1333Servlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -37,22 +37,31 @@ public class JDBC12Servlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		List<Employee> list = executeJDBC();
-	
-		request.setAttribute("employees", list);
+		//우리가 사용 하는페이지는 int 타입이라 변환필요 
+		String pageStr = request.getParameter("page");
+		int page = 1;
+		if (pageStr != null) {
+			page = Integer.parseInt(pageStr);
+		}
 		
-		String path = "/ch14/jdbc12.jsp";
+		List<Customer> list = executeJDBC(page);
+		
+		request.setAttribute("customers", list);
+		
+		String path = "/ch14/sample/jdbc1333.jsp";
 		request.getRequestDispatcher(path).forward(request, response);
 	}
 	
-	private List<Employee> executeJDBC() {
+	private List<Customer> executeJDBC(int page) {
 
-		List<Employee> list = new ArrayList<>(); // 리턴할 객체
+		List<Customer> list = new ArrayList<>(); // 리턴할 객체
 		
-		String sql = "SELECT EmployeeID, LastName, FirstName, Notes " + 
-				"FROM Employees ";
+		String sql = "SELECT CustomerID, CustomerName, City "
+				+ "FROM Customers "
+				+ "ORDER BY CustomerID "
+				+ "LIMIT " + ((page-1) * 5) + ", 5" ;
 
-		String url = "jdbc:mysql://52.79.195.216/test"; // 본인 ip
+		String url = "jdbc:mysql://13.125.118.27/test"; // 본인 ip
 		String user = "root";
 		String password = "wnddkdwjdqhcjfl1";
 
@@ -75,13 +84,12 @@ public class JDBC12Servlet extends HttpServlet {
 
 			// 결과 탐색
 			while (rs.next()) {
-				Employee employee = new Employee();
-				employee.setId(rs.getInt(1));
-				employee.setLastName(rs.getString(2));
-				employee.setFirstName(rs.getString(3));
-				employee.setNotes(rs.getString(4));
+				Customer customer = new Customer();
+				customer.setId(rs.getInt(1));
+				customer.setName(rs.getString(2));
+				customer.setCity(rs.getString(3));
 				
-				list.add(employee);
+				list.add(customer);
 			}
 
 		} catch (Exception e) {
