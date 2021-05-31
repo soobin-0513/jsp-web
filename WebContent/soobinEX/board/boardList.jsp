@@ -4,7 +4,7 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="my" tagdir="/WEB-INF/tags/ch16/lecture" %>
 <%@ taglib prefix="tf" tagdir="/WEB-INF/tags/ch16/textbook" %>
-<%@ taglib prefix="s1" tagdir="/WEB-INF/tags/sample1" %>
+<%@ taglib prefix="soonav" tagdir="/WEB-INF/tags/soobintag" %>
 
 <% request.setCharacterEncoding("utf-8"); %>
 
@@ -18,8 +18,7 @@
 </head>
 <body>
 
-<s1:soobinNB />
-
+<soonav:topnav  />
 <div class="container mt-3">
 	<div class="row justify-content-center">
 		<div class="col-8">

@@ -4,7 +4,7 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="my" tagdir="/WEB-INF/tags/ch16/lecture" %>
 <%@ taglib prefix="tf" tagdir="/WEB-INF/tags/ch16/textbook" %>
-<%@ taglib prefix="s1" tagdir="/WEB-INF/tags/sample1" %>
+<%@ taglib prefix="soonav" tagdir="/WEB-INF/tags/soobintag" %>
 
 <% request.setCharacterEncoding("utf-8"); %>
 
@@ -38,17 +38,19 @@
 </head>
 <body>
 
-<s1:soobinNB  />
+<soonav:topnav  />
 
 <div class="container mt-3">
 <div class="row justify-content-center">
 		<div class="col-8">
 			<h1>글 쓰기</h1>
 			<form action="" method="post">
-				<div class="form-group" >
+				<div class="form-g
+				roup" >
 					<label for="input1">제목</label>
 					<input type="text" name="title" class="form-control" id="input1">
 				</div>
+				
 				<div class="form-group" >
 					<label for="input2">작성자 </label>
 					<input type="text" name="writer" class="form-control" id="input2">
