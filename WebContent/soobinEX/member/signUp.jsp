@@ -33,6 +33,9 @@
 			      <input type="password" class="form-control" id="inputPassword4" name="userpw">
 			  	  <br>
 			  	  
+			  	 <label class="mt-1 mb-1" for="inputAddress">닉네임  </label>
+			     <input type="text" class="form-control" id="inputAddress" name="userinick">
+			  	 <br>
 			     <label class="mt-1 mb-1" for="inputAddress">이름 </label>
 			     <input type="text" class="form-control" id="inputAddress" name="username">
 			  	 <br>
@@ -54,6 +57,8 @@
 				  </select>
 				 
 			     <br>
+			     <label class="mt-1 mb-1" for="exampleFormControlTextarea1">가입한마디 </label>
+   				 <textarea class="form-control" name="usertalk" id="exampleFormControlTextarea1" rows="3"></textarea>
 			  </div>
 			  <br>
 	  		<button type="submit" class="btn btn-primary">회원가입 </button>

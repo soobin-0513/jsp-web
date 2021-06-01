@@ -3,11 +3,25 @@ package member.bean;
 public class Member {
 	private String userid;
 	private String userpw;
+	private String userinick;
+	public String getUserinick() {
+		return userinick;
+	}
+	public void setUserinick(String userinick) {
+		this.userinick = userinick;
+	}
 	private String username;
 	private String userbirth;
 	private String userem;
 	private String usergender;
+	private String usertalk;
 	
+	public String getUsertalk() {
+		return usertalk;
+	}
+	public void setUsertalk(String usertalk) {
+		this.usertalk = usertalk;
+	}
 	public String getUserbirth() {
 		return userbirth;
 	}

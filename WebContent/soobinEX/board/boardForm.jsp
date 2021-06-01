@@ -43,7 +43,7 @@
 <div class="container mt-3">
 <div class="row justify-content-center">
 		<div class="col-8">
-			<h1>글 쓰기</h1>
+			<h1 class="mt-3 mb-3 text-center">글 쓰기</h1>
 			<form action="" method="post">
 				<div class="form-g
 				roup" >

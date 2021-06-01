@@ -22,7 +22,7 @@
 <div class="container mt-3">
 	<div class="row justify-content-center">
 		<div class="col-8">
-			<h1>목록 보기</h1>
+			<h1 class="mt-3 mb-3 text-center">목록 보기</h1>
 			<table class="table">
 				<thead>
 					<tr>
