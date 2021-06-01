@@ -1,4 +1,4 @@
-package member.servlet;
+package soobinEX.member.servlet;
 
 import java.io.IOException;
 import java.util.List;
@@ -10,11 +10,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import member.bean.Member;
+import soobinEX.member.been.Member;
 /**
  * Servlet implementation class MemberSignupServlet
  */
-@WebServlet("/soobinEX/signup")
+@WebServlet("/soobinEX/member/signup")
+
 public class MemberSignupServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -67,7 +68,7 @@ public class MemberSignupServlet extends HttpServlet {
 		
 		memberlist.add(member);
 		
-		response.sendRedirect(request.getContextPath()+"/soobinEX/memberlist");
+		response.sendRedirect(request.getContextPath()+"/soobinEX/member/memberlist");
 		
 	}
 

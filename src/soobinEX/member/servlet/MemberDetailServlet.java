@@ -1,9 +1,8 @@
-package soobinEX;
+package soobinEX.member.servlet;
 
 import java.io.IOException;
 import java.util.List;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -11,17 +10,19 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import soobinEX.member.been.Member;
+
 /**
- * Servlet implementation class BoardListServlet
+ * Servlet implementation class MemberDetailServlet
  */
-@WebServlet("/soobinEX/list")
-public class BoardListServlet extends HttpServlet {
+@WebServlet("/MemberDetailServlet")
+public class MemberDetailServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public BoardListServlet() {
+    public MemberDetailServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -30,21 +31,22 @@ public class BoardListServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		ServletContext application = request.getServletContext();
-		List<Board> list = (List<Board>) application.getAttribute("boards");
-		
-		request.setAttribute("list", list);
-		
-		String path = "/soobinEX/board/boardList.jsp";
-		RequestDispatcher dispatcher =  request.getRequestDispatcher(path);
-		dispatcher.forward(request, response);
-		
-//		for (Board board : list) {
-//			out.print("<li>");
-//			out.print(board.getTitle());
-//			out.print("</li>");
-//		}
+		//한글 깨지기 방지 
+				request.setCharacterEncoding("utf-8");
+				
+				String index = request.getParameter("index");
+				
+				System.out.println(index);
+				
+				ServletContext application = request.getServletContext();
+				List<Member> memberlist = (List<Member>) application.getAttribute("members");
+				
+				int i = Integer.parseInt(index);
+				Member member = memberlist.get(i);
+				request.setAttribute("memberlist", memberlist);
+				
+				String path="/soobinEX/member/memberDetail.jsp";
+				request.getRequestDispatcher(path).forward(request, response);
 	}
 
 	/**

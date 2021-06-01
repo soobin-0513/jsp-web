@@ -1,4 +1,4 @@
-package soobinEX;
+package soobinEX.board;
 
 import java.util.ArrayList;
 import java.util.List;

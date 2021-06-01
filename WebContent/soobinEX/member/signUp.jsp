@@ -13,6 +13,48 @@
 
 <%@ include file="/WEB-INF/subModules/bootstrapHeader.jsp" %>
 
+<script type="text/javascript">
+
+	function signcheck(){
+		var fm = document.myform;
+		if(!fm.userid.value)
+			alert("아이디를 입력해주세요!");
+			fm.userid.focus();
+			return false;			
+		}
+		if(!fm.userid.value){
+			alert("비밀번호를 입력해주세요!!");
+			fm.userpw.focus();
+			return false;		
+		}
+		if(!fm.userpw.value){
+			alert("닉네임을 입력해주세요");
+			fm.usernick.focus();
+			return false;
+		}
+		if(!fm.usernick.value){
+			alert("이름을 입력해주세요");
+			fm.username.focus();
+			return false;
+		}
+		if(!fm.username.value){
+			alert("생일을 입력해주세요");
+			fm.userbirth.focus();
+			return false;
+		}
+		if(!fm.userbirth.value){
+			alert("이메일을 입력해주세요");
+			fm.userem.focus();
+			return false;
+		}
+		fm.userem.value = str;
+		location.href="mainindex.jsp";
+	}
+
+	
+
+
+</script>
 <title>회원가입 페이지 </title>
 </head>
 <body>
@@ -20,7 +62,7 @@
 <div class="container">
 	<div class="row justify-content-center">
 		<h1 class="mt-3 mb-3 text-center" > 회 원 가 입  </h1>
-		<form action="" method="post"class="text-center">
+		<form action="" method="post"class="text-center" name="myform">
 			  <div class="form-row">
 			      <label class="mt-1 mb-1"for="inputID">아이디 </label>
 			      <div class="input-group">
@@ -57,13 +99,15 @@
 				  </select>
 				 
 			     <br>
-			     <label class="mt-1 mb-1" for="exampleFormControlTextarea1">가입한마디 </label>
+			     <label class="mt-1 mb-1" for="exampleFormControlTextarea1">자기소개  </label>
    				 <textarea class="form-control" name="usertalk" id="exampleFormControlTextarea1" rows="3"></textarea>
-			  </div>
-			  <br>
-	  		<button type="submit" class="btn btn-primary">회원가입 </button>
-		</form>
-	</div>
+				  </div>
+				  <br>
+	  			<%-- <input type="submit" class="btn btn-primary" value="회원가입 " onclick="signcheck()" > --%>
+	  			<input type="submit" class="btn btn-primary" value="회원가입 " >
+	  		</form>
+		</div>
 </div>
 </body>
 </html>
+

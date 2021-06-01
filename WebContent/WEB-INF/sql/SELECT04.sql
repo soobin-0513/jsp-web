@@ -11,3 +11,6 @@ WHERE CustomerID = 2;
 
 SELECT * FROM Employees
 WHERE EmployeeID = 1 ;
+
+SELECT DISTINCT City FROM Customers;
+

@@ -21,7 +21,7 @@
 <div class="container">
 		<div class="row justify-content-center">
 		<div class="col-8">
-			<h1 class="mt-3 mb-3 text-center"> 가입 회원 목록 </h1>
+			<h1 class="mt-3 mb-3 text-center"> 회원 목록 </h1>
 			<table class="table">
 				<thead>
 					<tr>
@@ -32,7 +32,7 @@
 					</tr>
 				</thead>
 				<tbody>
-					<c:forEach items="${memberlist }" var="member" varStatus="status">
+					<c:forEach items="${list }" var="member" varStatus="status">
 						<tr>
 							<td>${status.count }</td>
 							<td>
@@ -41,6 +41,7 @@
 								</a>
 							</td>
 							<td>${member.userbirth}</td>
+							<td>💜</td>
 						</tr>
 					</c:forEach>
 				</tbody>

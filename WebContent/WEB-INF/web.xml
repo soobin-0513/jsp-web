@@ -19,7 +19,11 @@
   </listener>
   
   <listener>
-  	<listener-class>soobinEX.BoardAppListener</listener-class>
+  	<listener-class>soobinEX.board.BoardAppListener</listener-class>
+  </listener>
+  
+   <listener>
+  	<listener-class>soobinEX.member.servlet.MemberAppListener</listener-class>
   </listener>
   
     <context-param>

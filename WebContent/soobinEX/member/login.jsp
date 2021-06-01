@@ -5,7 +5,6 @@
 <%@ taglib prefix="my" tagdir="/WEB-INF/tags/ch16/lecture" %>
 <%@ taglib prefix="tf" tagdir="/WEB-INF/tags/ch16/textbook" %>
 <%@ taglib prefix="soonav" tagdir="/WEB-INF/tags/soobintag" %>
-
 <% request.setCharacterEncoding("utf-8"); %>
 
 <!DOCTYPE html>
@@ -14,7 +13,7 @@
 
 <%@ include file="/WEB-INF/subModules/bootstrapHeader.jsp" %>
 
-	<script type="text/javascript">
+<script type="text/javascript">
 		function pop(){
 			ok =confirm("제출할꺼야?");
 			if(ok){
@@ -33,38 +32,30 @@
 		}
 		
 	</script>
-<title>내용작성 </title>
+<title>로그인 페이지  </title>
 </head>
 <body>
-
 <soonav:topnav  />
-
-<div class="container mt-3">
-<div class="row justify-content-center">
-		<div class="col-8">
-			<h1 class="mt-3 mb-3 text-center">글 쓰기</h1>
-			<form action="" method="post">
-				<div class="form-g
-				roup" >
-					<label for="input1">제목</label>
-					<input type="text" name="title" class="form-control" id="input1">
-				</div>
-				
+<div class="container">
+	<div class="row justify-content-center">
+			<div class="col-3 center mt-3">
+				<h1 class="mt-3 mb-3 text-center" > 로 그 인 </h1>
+				<br>
+				<form action="loginAction.jsp" method="post">
 				<div class="form-group" >
-					<label for="input2">작성자 </label>
-					<input type="text" name="writer" class="form-control" id="input2">
+					<label class="mt-1 mb-1" for="input1">아이디 </label>
+					<input type="text" name="userid" class="form-control" id="input1">
 				</div>
-				<div class="form-group">
-					<label for="textarea1">본문</label>
-					<textarea class="form-control" name="body" rows="5" id="textarea1"></textarea>
+				<div class="form-group" >
+					<label for="input2">비밀번호  </label>
+					<input type="password" name="userpw" class="form-control" id="input2">
 				</div>
-				<input class="btn btn-primary mb-2" type="submit" value="등록" onclick="pop()" />
-				<input class="btn btn-primary mb-2" type ="button" value="취소" onclick="re()">
-			</form>
+			  	  <br>
+			  	  
+	  			<input type="submit" class="btn btn-primary" value="로그인" >
+	  		</form>
 		</div>
 	</div>
-	
 </div>
 </body>
 </html>
-

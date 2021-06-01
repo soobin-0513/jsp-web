@@ -29,6 +29,7 @@ $(document).ready(function() {
 <s1:navbar />
 
 <div class="container mt-5">
+
 	<div class="row justify-content-center">
 		<div class="col-8">
 			<h1>글 보기</h1>

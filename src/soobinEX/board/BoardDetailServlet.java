@@ -1,4 +1,4 @@
-package soobinEX;
+package soobinEX.board;
 
 import java.io.IOException;
 import java.util.List;
@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class BoardDetailServlet
  */
-@WebServlet("/soobinEX/detail")
+@WebServlet("/soobinEX/board/detail")
 public class BoardDetailServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

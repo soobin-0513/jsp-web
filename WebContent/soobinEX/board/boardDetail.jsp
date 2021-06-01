@@ -31,7 +31,7 @@ $(document).ready(function() {
 	<div class="row justify-content-center">
 		<div class="col-8">
 			<h1 class="mt-3 mb-3 text-center">글 보기</h1>
-			<form id="form1" action="${pageContext.request.contextPath }/soobinEX/modify" method="post">
+			<form id="form1" action="${pageContext.request.contextPath }/soobinEX/board/modify" method="post">
 				<%-- action="${pageContext.request.contextPath }/sample/modify?index=${param.index} 이거말고input추가 다른방--%>
 				<div class="form-group" >
 					<label for="input1">제목</label>

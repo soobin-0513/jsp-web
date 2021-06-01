@@ -1,4 +1,4 @@
-package soobinEX;
+package soobinEX.board;
 
 public class Board {
 	private String title;

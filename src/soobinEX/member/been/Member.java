@@ -1,20 +1,22 @@
-package member.bean;
+package soobinEX.member.been;
 
 public class Member {
 	private String userid;
 	private String userpw;
 	private String userinick;
+	private String username;
+	private String userbirth;
+	private String userem;
+	private String usergender;
+	private String usertalk;
+	
+	
 	public String getUserinick() {
 		return userinick;
 	}
 	public void setUserinick(String userinick) {
 		this.userinick = userinick;
 	}
-	private String username;
-	private String userbirth;
-	private String userem;
-	private String usergender;
-	private String usertalk;
 	
 	public String getUsertalk() {
 		return usertalk;
