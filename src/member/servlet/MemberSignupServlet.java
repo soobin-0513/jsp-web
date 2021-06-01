@@ -29,7 +29,7 @@ public class MemberSignupServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		String path = "/soobinEX/member/signup.jsp";
+		String path = "/soobinEX/member/signUp.jsp";
 		request.getRequestDispatcher(path).forward(request, response);
 	}
 
