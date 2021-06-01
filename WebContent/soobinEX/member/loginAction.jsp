@@ -21,6 +21,7 @@
 		session.setAttribute("userid", userid);
 		session.setAttribute("userpw", userpw);
 		
+		
 		String path ="/soobinEX/mianindex.jsp";
 		RequestDispatcher dispatcher =  request.getRequestDispatcher(path);
 		dispatcher.forward(request, response);

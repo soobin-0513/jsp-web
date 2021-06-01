@@ -13,27 +13,37 @@
 
 <%@ include file="/WEB-INF/subModules/bootstrapHeader.jsp" %>
 
-<script type="text/javascript">
-		function pop(){
-			ok =confirm("제출할꺼야?");
-			if(ok){
-				doucument.getElementById("frm").submit();
-			}else{
-				return false;
-			}
-		}
-		function re(){
-			ok =confirm("취소할꺼야?");
-			if(ok){
-				doucument.getElementById("frm").button();
-			}else{
-				return false;
-			}
-		}
-		
-	</script>
+
 <title>로그인 페이지  </title>
 </head>
+<script type="text/javascript">
+
+	function logincheck(){
+		var fm = document.mf;
+		
+		if(!fm.userid.value)
+			alert("아이디를 입력해주세요!");
+			fm.userid.focus();
+		}else{
+			return false; 
+		}
+	
+		if(!fm.userpw.value){
+			alert("비밀번호를 입력해주세요!!");
+			fm.userpw.focus();
+		}else{
+			return false; 
+		}
+		
+		if(fm.userid=="admin"){
+			if(fm.userpw=="1234"){
+				alert("환영합니다.");
+				location.href="mainindex.jsp";
+			}
+		}
+		}
+</script>	
+
 <body>
 <soonav:topnav  />
 <div class="container">
@@ -41,7 +51,7 @@
 			<div class="col-3 center mt-3">
 				<h1 class="mt-3 mb-3 text-center" > 로 그 인 </h1>
 				<br>
-				<form action="loginAction.jsp" method="post">
+				<form action="" method="post" name="mf">
 				<div class="form-group" >
 					<label class="mt-1 mb-1" for="input1">아이디 </label>
 					<input type="text" name="userid" class="form-control" id="input1">
@@ -58,4 +68,5 @@
 	</div>
 </div>
 </body>
+
 </html>

@@ -23,8 +23,6 @@
 			}
 		}
 		
-		
-		
 	</script>
 <title>메인 페이지  </title>
 </head>
