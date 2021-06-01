@@ -23,6 +23,9 @@ public class MemberListServlet extends HttpServlet {
     /**
      * @see HttpServlet#HttpServlet()
      */
+	
+	
+	
     public MemberListServlet() {
         super();
         // TODO Auto-generated constructor stub

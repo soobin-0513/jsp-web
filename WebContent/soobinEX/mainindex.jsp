@@ -20,11 +20,13 @@
 <soonav:topnav  />
 <div class="container">
 	<div class="row justify-content-center">
-		<div class="col-3 center mt-3">
-			<h1>반갑습니다</h1>
-			<img alt="" src="${pageContext.request.contextPath}/pic/binbins.png">
+		<div class=" center mt-3">
+		
+			<h1 class="mt-3 mb-3 text-center"> 반갑습니다  삔이월드 입니다!</h1>
+			<img alt="" src="${pageContext.request.contextPath}/pic/binbins.JPG">
 		</div>
 	</div>
 </div>
+
 </body>
 </html>

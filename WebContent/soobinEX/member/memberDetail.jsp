@@ -34,7 +34,9 @@
 				
 				<div class="form-group">
 					<label for="textarea1">자기소개  </label>
-					<textarea readonly class="form-control" name="usertalk" rows="5" id="textarea1"><c:out value="${member.usertalk }" /></textarea>
+					<textarea readonly class="form-control" name="usertalk" rows="5" id="textarea1">
+						<c:out value="${member.usertalk }" />
+					</textarea>
 				</div>
 				<input type="submit" id="submit1" class="btn btn-primary" value="채팅하기 " />
 			</form>

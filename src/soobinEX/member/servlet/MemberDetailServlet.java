@@ -15,7 +15,7 @@ import soobinEX.member.been.Member;
 /**
  * Servlet implementation class MemberDetailServlet
  */
-@WebServlet("/MemberDetailServlet")
+@WebServlet("/soobinEX/member/membedetail")
 public class MemberDetailServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
