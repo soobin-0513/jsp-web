@@ -1,7 +1,11 @@
 SELECT City FROM Customers;
 
-SELECT DISTINCT City FROM Customers;
+SELECT count(*) FROM Customers
+WHERE City='Buenos Aires';
 
+
+SELECT DISTINCT City FROM Customers;
+SELECT COUNT(DISTINCT City) FROM Customers;
 -- COUNT Function
 SELECT COUNT(*) FROM Customers;
 
