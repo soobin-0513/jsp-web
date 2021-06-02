@@ -28,12 +28,15 @@
       </li>
     </ul>
  	<ul class="nav navbar-nav navbar-left">
+ 	<%-- 로그인했냐 안했냐 조건을 따져서 보여줄 버튼을 변경, 로그인했나안했나는 세션으로확 --%>
+ 	<c:if test="true">
 	      <li class="nav-item">
 	        <a class="nav-link" href="${pageContext.request.contextPath }/soobinEX/member/login">로그인   <span class="sr-only">(current)</span></a>
 	      </li>
 	      <li class="nav-item">
 	        <a class="nav-link" href="${pageContext.request.contextPath }/soobinEX/member/signup">회원가입 </a>
 	      </li>
+ 	</c:if>
       </ul>
   </div>
 </nav>

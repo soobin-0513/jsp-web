@@ -41,7 +41,7 @@ public class MemberListServlet extends HttpServlet {
 		
 		request.setAttribute("memberlist", memberlist);
 		
-		String path ="/soobinEX/member/memberList.jsp";
+		String path ="/soobinEX/member/memberList1.jsp";
 		RequestDispatcher dispatcher =  request.getRequestDispatcher(path);
 		dispatcher.forward(request, response);
 	}

@@ -21,7 +21,7 @@
 	function logincheck(){
 		var fm = document.mf;
 		
-		if(!fm.userid.value)
+		if(!fm.userid.value){
 			alert("아이디를 입력해주세요!");
 			fm.userid.focus();
 		}else{

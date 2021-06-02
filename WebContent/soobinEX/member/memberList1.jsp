@@ -32,11 +32,11 @@
 					</tr>
 				</thead>
 				<tbody>
-					<c:forEach items="${list }" var="member" varStatus="status">
+					<c:forEach items="${memberlist }" var="member" varStatus="status">
 						<tr>
 							<td>${status.count }</td>
 							<td>
-								<a href="detail?index=${status.index }">
+								<a href="memberdetail?index=${status.index }">
 									${member.usernick }
 								</a>
 							</td>

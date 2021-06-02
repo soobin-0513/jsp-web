@@ -49,7 +49,7 @@ public class MemberSignupServlet extends HttpServlet {
 				
 		String userid  = request.getParameter("userid");
 		String userpw  = request.getParameter("userpw");
-		String userinick  = request.getParameter("userinick");		
+		String usernick  = request.getParameter("usernick");		
 		String username  = request.getParameter("username");
 		String userbirth = request.getParameter("userbirth");
 		String userem  = request.getParameter("userem");
@@ -59,7 +59,7 @@ public class MemberSignupServlet extends HttpServlet {
 		Member member = new Member();
 		member.setUserid(userid);
 		member.setUserpw(userpw);
-		member.setUserinick(userinick);
+		member.setUsernick(usernick);
 		member.setUsername(username);
 		member.setUserbirth(userbirth);
 		member.setUserem(userem);
@@ -68,7 +68,7 @@ public class MemberSignupServlet extends HttpServlet {
 		
 		memberlist.add(member);
 		
-		response.sendRedirect(request.getContextPath()+"/soobinEX/member/memberlist");
+		response.sendRedirect(request.getContextPath()+"/soobinEX/mainindex.jsp");
 		
 	}
 

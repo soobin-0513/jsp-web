@@ -15,7 +15,7 @@ import soobinEX.member.been.Member;
 /**
  * Servlet implementation class MemberDetailServlet
  */
-@WebServlet("/soobinEX/member/membedetail")
+@WebServlet("/soobinEX/member/memberdetail")
 public class MemberDetailServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -43,7 +43,7 @@ public class MemberDetailServlet extends HttpServlet {
 				
 				int i = Integer.parseInt(index);
 				Member member = memberlist.get(i);
-				request.setAttribute("memberlist", memberlist);
+				request.setAttribute("member", member);
 				
 				String path="/soobinEX/member/memberDetail.jsp";
 				request.getRequestDispatcher(path).forward(request, response);

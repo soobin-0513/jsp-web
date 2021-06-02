@@ -3,7 +3,7 @@ package soobinEX.member.been;
 public class Member {
 	private String userid;
 	private String userpw;
-	private String userinick;
+	private String usernick;
 	private String username;
 	private String userbirth;
 	private String userem;
@@ -11,11 +11,11 @@ public class Member {
 	private String usertalk;
 	
 	
-	public String getUserinick() {
-		return userinick;
+	public String getUsernick() {
+		return usernick;
 	}
-	public void setUserinick(String userinick) {
-		this.userinick = userinick;
+	public void setUsernick(String usernick) {
+		this.usernick = usernick;
 	}
 	
 	public String getUsertalk() {

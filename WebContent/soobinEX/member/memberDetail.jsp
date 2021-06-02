@@ -21,20 +21,20 @@
 		<div class="row justify-content-center">
 		<div class="col-8">
 			<h1 class="mt-3 mb-3 text-center">회원 정보 </h1>
-			<form id="form1" action="" method="post">
+			<form  action="" method="post">
 				<%-- action="${pageContext.request.contextPath }/sample/modify?index=${param.index} 이거말고input추가 다른방--%>
 				<div class="form-group" >
-					<label for="input1">닉네임</label>
-					<input readonly value="${member.usernick }" type="text" name="usernick" class="form-control">
+					<label for="inputNick">닉네임</label>
+					<input readonly value="${member.usernick }" type="text" class="form-control" id="inputNick" name="usernick">
 				</div>
 				<div class="form-group" >
-					<label for="input2">생년월일 </label>
-					<input readonly value="${mbember.userbirth}" type="text" name="userbirth" class="form-control" >
-				</div>ㄴ
+					<label for="inputAge">생년월일 </label>
+					<input readonly value="${member.userbirth}" type="text"  class="form-control" id="inputAge" name="userbirth" >
+				</div>
 				
 				<div class="form-group">
-					<label for="textarea1">자기소개  </label>
-					<textarea readonly class="form-control" name="usertalk" rows="5" id="textarea1">
+					<label for="userTextarea">자기소개  </label>
+					<textarea readonly class="form-control" name="usertalk" id="userTextarea" rows="3">
 						<c:out value="${member.usertalk }" />
 					</textarea>
 				</div>

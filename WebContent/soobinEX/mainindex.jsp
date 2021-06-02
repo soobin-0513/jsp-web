@@ -41,6 +41,7 @@
 			<img alt="" src="${pageContext.request.contextPath}/pic/binbins.JPG">
 		</div>
 	</div>
+	<%-- 
 	<div class="row justify-content-center" id="end">
 		<div class="my_box">
                 <div class="my_promise">
@@ -51,6 +52,7 @@
                 </div>
          </div>
 	</div>
+	--%>
 </div>
 
 </body>

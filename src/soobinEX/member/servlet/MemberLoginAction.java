@@ -52,7 +52,7 @@ public class MemberLoginAction extends HttpServlet {
 		member.setUserid(userid);
 		member.setUserpw(userpw);
 		
-		memberlist.add(member);
+		//입력한 아이디랑 비번이 있는지 비교하는코드 랑 for으로 탐색 필요@
 		
 		response.sendRedirect(request.getContextPath()+"/soobinEX/member/memberlist");
 	}
