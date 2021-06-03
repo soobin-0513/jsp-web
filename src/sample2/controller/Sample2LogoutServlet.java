@@ -6,21 +6,21 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
- * Servlet implementation class Sample2MainServlet
+ * Servlet implementation class Sample2LogoutServlet
  */
-@WebServlet("/sample2/main")
-public class Sample2MainServlet extends HttpServlet {
+@WebServlet("/sample2/logout")
+public class Sample2LogoutServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Sample2MainServlet() {
+    public Sample2LogoutServlet() {
         super();
         // TODO Auto-generated constructor stub
-        
     }
 
 	/**
@@ -28,9 +28,13 @@ public class Sample2MainServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		String path = "/WEB-INF/sample2/main.jsp";
-		request.getRequestDispatcher(path).forward(request, response);
-
+		//세션 날려버리기 !! 로그아웃!
+		HttpSession session = request.getSession();
+		session.invalidate();
+		
+		//로그아웃후에 어디로 포워드 시킬지 
+		String path = request.getContextPath() +"/sample2/main";
+		response.sendRedirect(path);
 	}
 
 	/**

@@ -13,6 +13,7 @@
 	|</c:if>
 	<c:if test="${not empty sessionScope.userLogined }">
 	<a href="<%= request.getContextPath() %>/sample2/info">정보보기</a>
+	|
 	<a href="<%= request.getContextPath() %>/sample2/logout">로그아웃 </a>
 	|
 	</c:if>

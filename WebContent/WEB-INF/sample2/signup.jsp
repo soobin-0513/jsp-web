@@ -14,13 +14,39 @@
 <%@ include file="/WEB-INF/subModules/bootstrapHeader.jsp" %>
 
 <title>Insert title here</title>
+<script type="text/javascript">
+
+	var url = "${pageContext.request.contextPath}" + "/sample2/checkdup";
+
+	$(document).ready(function() {
+		$("#button1").click(function() {
+			var id = $("#input1").val();
+			
+			$.post(url, {id: id}, function(data) {
+				if (data == 'ok') {
+					// 가입 가능 메세지
+					// console.log("ok");
+					alert("사용 가능")
+					//$("#span1").text("사용 가능");
+				} else {
+					// 가입 불가능 메세지
+					// console.log("not ok");
+					alert("이미 사용중입니다 ")
+					//$("#span1").text("사용 불가능");
+				}
+			});
+		});
+	});
+</script>
 </head>
 <body>
 <div class="container">
 <s2:navbar></s2:navbar>
 	<form action="${pageContext.request.contextPath }/sample2/signup" method="post" >
 		id : <br>
-		<input type="text" name="id"/> <br>
+		<input type="text" name="id" id="input1"/> 
+		<button id="button1" type="button">중복확인 </button> <br>
+		<%-- --%><span id="span1"></span>
 		p w : <br>
 		<input type="password" name="password"/> <br>
 		name : <br>
@@ -30,6 +56,11 @@
 		
 		<input type="submit" value="가입">
 	</form>
+	<c:if test="${not empty message }">
+		<div>
+			${message }
+		</div>
+	</c:if>
 </div>
 </body>
 </html>
