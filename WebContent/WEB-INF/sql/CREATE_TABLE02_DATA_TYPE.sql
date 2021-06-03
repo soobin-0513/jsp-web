@@ -88,3 +88,13 @@ VALUES
 '2021-06-02 11:07:30',
 '2021-06-02 11:07:30');
 SELECT * FROM MyTable6;
+
+CREATE TABLE Persons(
+  PersonID int,
+  LastName varchar(255),
+  FirstName varchar(255),
+  Address varchar(255),
+  City varchar(255) 
+);
+
+DROP TABLE Persons;
