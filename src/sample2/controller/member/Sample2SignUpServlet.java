@@ -1,4 +1,4 @@
-package sample2.controller;
+package sample2.controller.member;
 
 import java.io.IOException;
 import java.sql.Date;
@@ -15,7 +15,7 @@ import sample2.dao.MemberDao;
 /**
  * Servlet implementation class Sample2SignUpServlet
  */
-@WebServlet("/sample2/signup")
+@WebServlet("/sample2/member/signup")
 public class Sample2SignUpServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -31,7 +31,7 @@ public class Sample2SignUpServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String path = "/WEB-INF/sample2/signup.jsp";
+		String path = "/WEB-INF/sample2/member/signup.jsp";
 		request.getRequestDispatcher(path).forward(request, response);
 	}
 
@@ -39,7 +39,8 @@ public class Sample2SignUpServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setCharacterEncoding("utf8");
+		//request.setCharacterEncoding("utf8");
+		
 		//request parameter 수집 
 		String id = request.getParameter("id");
 		String password = request.getParameter("password");
@@ -68,7 +69,7 @@ public class Sample2SignUpServlet extends HttpServlet {
 			response.sendRedirect(path);
 		}else {
 			request.setAttribute("message", "가입실패 ");
-			String path = "/WEB-INF/sample2/signup.jsp";
+			String path = "/WEB-INF/sample2/member/signup.jsp";
 			request.getRequestDispatcher(path).forward(request, response);
 		}
 	}

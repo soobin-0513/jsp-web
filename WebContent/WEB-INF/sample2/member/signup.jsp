@@ -16,7 +16,7 @@
 <title>Insert title here</title>
 <script type="text/javascript">
 
-	var url = "${pageContext.request.contextPath}" + "/sample2/checkdup";
+	var url = "${pageContext.request.contextPath}" + "/sample2/member/checkdup";
 
 	$(document).ready(function() {
 		$("#button1").click(function() {
@@ -42,7 +42,7 @@
 <body>
 <div class="container">
 <s2:navbar></s2:navbar>
-	<form action="${pageContext.request.contextPath }/sample2/signup" method="post" >
+	<form action="${pageContext.request.contextPath }/sample2/member/signup" method="post" >
 		id : <br>
 		<input type="text" name="id" id="input1"/> 
 		<button id="button1" type="button">중복확인 </button> <br>
@@ -54,7 +54,7 @@
 		birth day : <br>
 		<input type="date" name="birth"/> <br>
 		
-		<input type="submit" value="가입">
+		<input type="submit" value="가입 ">
 	</form>
 	<c:if test="${not empty message }">
 		<div>

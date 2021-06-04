@@ -1,4 +1,4 @@
-package sample2.controller;
+package sample2.controller.member;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -14,7 +14,7 @@ import sample2.dao.MemberDao;
 /**
  * Servlet implementation class Sample2InfoServlet
  */
-@WebServlet("/sample2/info")
+@WebServlet("/sample2/member/info")
 public class Sample2InfoServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -42,10 +42,10 @@ public class Sample2InfoServlet extends HttpServlet {
 			Member mem = dao.getMember(member.getId());
 			
 			request.setAttribute("member", mem);
-			String path = "/WEB-INF/sample2/info.jsp";
+			String path = "/WEB-INF/sample2/member/info.jsp";
 			request.getRequestDispatcher(path).forward(request, response);
 		}else {
-			String path = request.getContextPath() + "/sample2/main";
+			String path = request.getContextPath() + "/sample2/member/main";
 			response.sendRedirect(path);
 		}
 	}

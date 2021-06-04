@@ -1,4 +1,4 @@
-package sample2.controller;
+package sample2.controller.member;
 
 import java.io.IOException;
 import java.sql.Date;
@@ -15,7 +15,7 @@ import sample2.dao.MemberDao;
 /**
  * Servlet implementation class Sample2ModifyServlet
  */
-@WebServlet("/sample2/modify")
+@WebServlet("/sample2/member/modify")
 public class Sample2ModifyServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -39,7 +39,7 @@ public class Sample2ModifyServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setCharacterEncoding("utf-8");
+		//request.setCharacterEncoding("utf-8");
 		
 		String id = request.getParameter("id");
 		String password = request.getParameter("password");
@@ -68,7 +68,7 @@ public class Sample2ModifyServlet extends HttpServlet {
 		//정보나오게 
 		request.setAttribute("member", member);
 		
-		String path="/WEB-INF/sample2/info.jsp";
+		String path="/WEB-INF/sample2/member/info.jsp";
 		request.getRequestDispatcher(path).forward(request, response);
 		
 		

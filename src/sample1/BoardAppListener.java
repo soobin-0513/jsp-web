@@ -37,7 +37,6 @@ public class BoardAppListener implements ServletContextListener {
     	System.out.println("board app listener initialized.....");
     	ServletContext application = sce.getServletContext();
     	List<Board> list = new ArrayList<>();
-    	
     	application.setAttribute("boards", list);
     }
 	
