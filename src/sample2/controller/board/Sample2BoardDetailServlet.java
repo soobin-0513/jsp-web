@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import sample2.bean.Board;
+import sample2.bean.BoardDto;
 import sample2.dao.BoardDao;
 
 /**
@@ -26,6 +27,7 @@ public class Sample2BoardDetailServlet extends HttpServlet {
     }
 
 	/**
+	 * 
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -39,7 +41,8 @@ public class Sample2BoardDetailServlet extends HttpServlet {
 			
 			
 			BoardDao dao = new BoardDao();
-			Board board = dao.get(Integer.parseInt(id));
+			//Board board = dao.get(Integer.parseInt(id));
+			BoardDto board = dao.get2(Integer.parseInt(id));
 			
 			
 			request.setAttribute("board", board);

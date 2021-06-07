@@ -26,10 +26,12 @@
 			<textarea name="body" id="textarea1" readonly>${board.body }
 			</textarea><br>
 			작성자 : <br>
-			<input type="text" value="${board.memberIdHidden }" readonly/><br>
+			<%-- <input type="text" value="${board.memberIdHidden }" readonly/><br>--%>
+			<input type="text" value="${board.memberName }" readonly/><br>
 			작성시간:
 			<br>
-			<input type="text" value="${board.timeAgo }" readonly/><br>
+			<%-- <input type="text" value="${board.timeAgo }" readonly/><br> --%>
+			<input type="text" value="${board.inserted}" readonly/><br>
 			<br>
 			<input type="submit" value="수정 "/>
 		</form>
