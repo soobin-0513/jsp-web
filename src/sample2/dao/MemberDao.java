@@ -197,11 +197,12 @@ public class MemberDao {
 		return false;
 	}
 
-	public void remove(String id) {
+	public void remove(String id, Connection con) {
 		// TODO Auto-generated method stub
 		String sql ="DELETE FROM Member WHERE id =?";
 		try(
-			Connection con = DriverManager.getConnection(url,user,password);
+			//코드추가로 밑에 불필
+			//Connection con = DriverManager.getConnection(url,user,password);
 			PreparedStatement pstmt = con.prepareStatement(sql);
 		){
 			pstmt.setString(1, id);

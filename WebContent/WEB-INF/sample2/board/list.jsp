@@ -46,5 +46,6 @@
 			</tbody>
 		</table>
 	</div>
+	<s2:message/>
 </body>
 </html>

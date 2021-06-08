@@ -42,7 +42,14 @@ public class LoginFilter implements Filter {
 		//강제 형 변환 
 		HttpServletRequest req = (HttpServletRequest) request;
 		HttpSession session = req.getSession(false);
-		
+		/* false를 넘기는 이유는 존재하는 세션을 리턴하라는 의미입니다 .
+		   만약 이 클라이언트에 매핑된 세션이 없다면 null을 리턴함
+		   
+		   	request.getSession(true); // request에 대한 새로운 세션을 생성후 리턴
+			request.getSession(false); // 현재 세션이 존재하면 기존 세션 리턴, 없으면 null값 리턴
+			request.getSession(); //현재 세션이 존재하면 기존 세션 리턴, 없으면 새로생성한 세션 리턴
+
+		*/
 		if(session != null) {
 			
 			Object obj = session.getAttribute("userLogined");
