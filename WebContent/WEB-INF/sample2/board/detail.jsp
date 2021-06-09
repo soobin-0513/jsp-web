@@ -60,5 +60,20 @@
 		<s2:message/>
 		
 	</div>
+	<hr>
+	<c:if test="${not empty sessionScope.userLogined }">
+	<div class="container">
+		<h3>댓글 작성 </h3>
+		<form action="${pageContext.request.contextPath }/sample2/comment/add" method="post">
+			<textarea name="comment"></textarea>
+			<br>
+			<input hidden name="memberId" value="${sessionScope.userLogined.id }" readonly/>
+			<br>
+			<input hidden name="boardId" value="${board.boardId }" readonly/>
+			<br>
+			<input type="submit" value="댓글작성"/>
+		</form>
+	</div>
+	</c:if>
 </body>
 </html>
