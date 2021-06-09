@@ -1,4 +1,4 @@
-package sample2.controller.comment;
+package sample2.service.comment;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -8,30 +8,31 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import sample2.bean.Comment;
-import sample2.service.comment.CommentService;
 
 /**
- * Servlet implementation class Sample2CommentAddServlet
+ * Servlet implementation class Sample2CommentModifyServlet
  */
-@WebServlet("/sample2/comment/add")
-public class Sample2CommentAddServlet extends HttpServlet {
+@WebServlet("/sample2/comment/modify")
+public class Sample2CommentModifyServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	
-     private CommentService service; 
      
+	//필드 
+	private CommentService service;
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Sample2CommentAddServlet() {
+    public Sample2CommentModifyServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
+
     @Override
     public void init() throws ServletException {
     	// TODO Auto-generated method stub
     	super.init();
     	service = new CommentService();
     }
+    
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
@@ -44,25 +45,22 @@ public class Sample2CommentAddServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//파미터 수집 
-		String comment = request.getParameter("comment");
-		String memberId = request.getParameter("memberId");
+		
+		String idStr = request.getParameter("commentId");
+		String commentStr = request.getParameter("comment");
 		String boardId = request.getParameter("boardId");
+		int id = Integer.parseInt(idStr);
 		
-		//빈생성 및 프로퍼티 세팅 !
-		Comment commentBean = new Comment();
 		
-		commentBean.setComment(comment);
-		commentBean.setMemberId(memberId);
-		commentBean.setBoardId(Integer.parseInt(boardId));
+		Comment comment = new Comment();
+		//set 값은 위에 request에서 꺼내서 얻어와야함
+		comment.setId(id);
+		comment.setComment(commentStr);
 		
-		//서비스에게 일시킴  (실제로일하는애 )
-		service.add(commentBean);
+		service.modify(comment);
 		
-		// view에 전송(forward) 또는 redirect
-		String path = request.getContextPath()+"/sample2/board/detail?id=" + boardId;
+		String path = request.getContextPath() + "/sample2/board/detail?id=" + boardId;
 		response.sendRedirect(path);
-		
 	}
 
 }

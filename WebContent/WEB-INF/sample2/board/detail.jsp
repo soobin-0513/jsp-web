@@ -60,8 +60,8 @@
 		<s2:message/>
 		
 	</div>
-	<hr>
 	<c:if test="${not empty sessionScope.userLogined }">
+	<hr>
 	<div class="container">
 		<h3>댓글 작성 </h3>
 		<form action="${pageContext.request.contextPath }/sample2/comment/add" method="post">
@@ -75,5 +75,52 @@
 		</form>
 	</div>
 	</c:if>
+	
+	<div class="container mt-5">
+		<c:forEach items="${comments }" var="comment">
+			<script>
+				//여기 댓글작성 후 수정 및  삭제 할수 있는 기능 
+				$(document).ready(function(){
+					//제이쿼리 객체로  만들기 
+					var $form = $('#' + 'comment${comment.id}Form');
+					var $modifyButton =$('#' +  'comment${comment.id}Button1');
+					var $deleteButton = $('#' + 'comment${comment.id}Button2');
+					var $submitButton = $('#' + 'comment${comment.id}Button3');
+					
+					$modifyButton.click(function(e){
+						e.preventDefault();
+						$form.find("textarea").removeAttr("readonly");
+						$(this).attr("hidden","hidden");
+						$submitButton.removeAttr("hidden");
+						
+					});
+					$deleteButton.click(function(e) {
+						e.preventDefault();
+						
+						if (confirm("삭제 하시겠습니까?")) {
+							$form.attr("action", "${pageContext.request.contextPath }/sample2/comment/remove");
+							$form.submit();
+						}
+					});
+				});
+			</script>
+			<div>
+				<form id="comment${comment.id }Form" action="${pageContext.request.contextPath }/sample2/comment/modify" method="post">
+					<hr>
+					<input name="commentId" value="${comment.id }" hidden />
+			 	   <input name="boardId" value="${board.boardId }" hidden />
+					<span>작성자 : ${comment.memberName }</span><br>
+					<textarea rows="" cols="" name="comment">${comment.comment }</textarea><br>
+					
+					<small>${comment.timeAgo }</small>
+					<c:if test="${sessionScope.userLogined.id == comment.memberId }">
+						<button id="comment${comment.id }Button1">수정 </button>
+						<button id="comment${comment.id }Button3" hidden>전송  </button>
+						<button id="comment${comment.id }Button2">삭제  </button>
+					</c:if> 
+				</form>
+			</div>
+		</c:forEach>
+	</div>
 </body>
 </html>
