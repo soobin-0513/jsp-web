@@ -54,6 +54,10 @@
 	
 	<s2:message></s2:message>
 	</div>
+	<div>
+		작성한 게시물 수 : <span>${member.numberOfBoard }</span> <br>
+		작성한 댓글 수 : <span>${member.numberOfComment }</span>
+	</div>
 	<div class="container">
 		<form id="form2" action="${pageContext.request.contextPath}/sample2/member/remove" method="post">
 			<input id="submit2" type="submit" value="탈퇴">

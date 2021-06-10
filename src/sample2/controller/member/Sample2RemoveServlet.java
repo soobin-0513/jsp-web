@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import sample2.bean.Member;
-import sample2.service.member.MemberRemoveService;
+import sample2.service.member.MemberService;
 
 /**
  * Servlet implementation class Sample2RemoveServlet
@@ -17,7 +17,7 @@ import sample2.service.member.MemberRemoveService;
 @WebServlet("/sample2/member/remove")
 public class Sample2RemoveServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private MemberRemoveService service;
+	private MemberService service;
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -31,7 +31,7 @@ public class Sample2RemoveServlet extends HttpServlet {
     public void init() throws ServletException {
     	// TODO Auto-generated method stub
     	super.init();
-    	this.service = new MemberRemoveService();
+    	this.service = new MemberService();
     }
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
@@ -48,7 +48,7 @@ public class Sample2RemoveServlet extends HttpServlet {
 		 HttpSession session = request.getSession();
 		 Member member = (Member) session.getAttribute("userLogined");
 		 
-		 MemberRemoveService service = new MemberRemoveService();
+		 MemberService service = new MemberService();
 		 
 		 this.service.remove(member.getId());
 		 

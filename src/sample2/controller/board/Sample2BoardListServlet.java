@@ -34,10 +34,15 @@ public class Sample2BoardListServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		BoardDao dao = new BoardDao();
 		//List<Board> boardList =dao.list();
-		List<BoardDto> boardList =dao.list2();
+		//List<BoardDto> boardList =dao.list2();
+		List<BoardDto> boardList =dao.list3();
+		
+		//총 게시물 수
+		int total = dao.countAll();
 		
 		String path = "/WEB-INF/sample2/board/list.jsp";
 		request.setAttribute("boards", boardList);
+		request.setAttribute("totalNum", total);
 		request.getRequestDispatcher(path).forward(request,response);
 	}
 

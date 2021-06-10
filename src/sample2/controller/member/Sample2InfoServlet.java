@@ -10,6 +10,7 @@ import javax.servlet.http.HttpSession;
 
 import sample2.bean.Member;
 import sample2.dao.MemberDao;
+import sample2.service.member.MemberService;
 
 /**
  * Servlet implementation class Sample2InfoServlet
@@ -17,6 +18,8 @@ import sample2.dao.MemberDao;
 @WebServlet("/sample2/member/info")
 public class Sample2InfoServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	private MemberService service;
+	
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -26,6 +29,12 @@ public class Sample2InfoServlet extends HttpServlet {
         // TODO Auto-generated constructor stub
     }
 
+    	@Override
+    	public void init() throws ServletException {
+    		// TODO Auto-generated method stub
+    		super.init();
+    		service = new MemberService();
+    	}
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
@@ -39,13 +48,19 @@ public class Sample2InfoServlet extends HttpServlet {
 	if(member != null ) {
 			
 			MemberDao dao = new MemberDao();
-			Member mem = dao.getMember(member.getId());
+		  //Member mem = dao.getMember(member.getId());
+		 //우리가 dao 한테 바로 일을 시킨코드! member2 게시물갯수, 댓글 갯수 추 
+		//Member mem = dao.getMember2(member.getId());
+			
+			
+			// dao말고 서비스에 따로 빼줘서 서비스로 일시키기 ? 
+			Member mem = service.getMember(member.getId());
 			
 			request.setAttribute("member", mem);
 			String path = "/WEB-INF/sample2/member/info.jsp";
 			request.getRequestDispatcher(path).forward(request, response);
 		}else {
-			String path = request.getContextPath() + "/sample2/member/main";
+			String path = request.getContextPath() + "/sample2/main";
 			response.sendRedirect(path);
 		}
 	}

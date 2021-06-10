@@ -10,6 +10,7 @@ public class BoardDto {
 	private String memberName;
 	private String memberId;
 	private Timestamp inserted;
+	private int numberOfComment;
 	
 	public String getMemberId() {
 		return memberId;
@@ -68,5 +69,13 @@ public class BoardDto {
 	}
 	public void setInserted(Timestamp inserted) {
 		this.inserted = inserted;
+	}
+
+	public int getNumberOfComment() {
+		return numberOfComment;
+	}
+
+	public void setNumberOfComment(int numberOfComment) {
+		this.numberOfComment = numberOfComment;
 	}
 }

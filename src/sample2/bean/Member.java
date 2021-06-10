@@ -9,6 +9,8 @@ public class Member {
 	private String name;
 	private Date birth;
 	private Timestamp inserted;
+	private int numberOfBoard;
+	private int numberOfComment;
 	
 	
 	public Timestamp getInserted() {
@@ -40,5 +42,17 @@ public class Member {
 	}
 	public void setBirth(Date birth) {
 		this.birth = birth;
+	}
+	public int getNumberOfComment() {
+		return numberOfComment;
+	}
+	public void setNumberOfComment(int numberOfComment) {
+		this.numberOfComment = numberOfComment;
+	}
+	public int getNumberOfBoard() {
+		return numberOfBoard;
+	}
+	public void setNumberOfBoard(int numberOfBoard) {
+		this.numberOfBoard = numberOfBoard;
 	}
 }

@@ -18,6 +18,7 @@
 	<div class="container">
 	<s2:navbar></s2:navbar>
 		<h1>글 목록 </h1>
+		<small>게시물 갯수 [${totalNum }]</small>
 		<table class="table">
 			<thead>
 				<tr>
@@ -37,6 +38,7 @@
 							<a href="<%= request.getContextPath() %>/sample2/board/detail?id=${board.boardId}">
 							${board.title }
 							</a>
+							<span>[${board.numberOfComment }]</span>
 						</td>
 						<td>${board.memberName}</td>
 						<%-- <td>${board.memberIdHidden }</td>--%>
