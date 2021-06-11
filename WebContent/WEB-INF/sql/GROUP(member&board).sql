@@ -53,5 +53,8 @@ WHERE m.id ='rxb0513';
 
 -- 총 게시물 갯수 확인
 SELECT count(Board.id)
-FROM Board 
-ORDER BY Board.id DESC ;
+FROM Board  ;
+
+SELECT b.id boardId,
+count(b.id)
+from Board b;

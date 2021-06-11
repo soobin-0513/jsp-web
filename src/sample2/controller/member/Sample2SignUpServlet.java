@@ -46,6 +46,7 @@ public class Sample2SignUpServlet extends HttpServlet {
 		String password = request.getParameter("password");
 		String name = request.getParameter("name");
 		String birth = request.getParameter("birth");
+		String usergender = request.getParameter("usergender");
 		
 		
 		//member bean완성
@@ -54,6 +55,7 @@ public class Sample2SignUpServlet extends HttpServlet {
 		member.setPassword(password);
 		member.setName(name);
 		member.setBirth(Date.valueOf(birth));
+		member.setUsergender(usergender);
 		
 	
 		

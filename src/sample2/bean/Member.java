@@ -11,6 +11,7 @@ public class Member {
 	private Timestamp inserted;
 	private int numberOfBoard;
 	private int numberOfComment;
+	private String usergender;
 	
 	
 	public Timestamp getInserted() {
@@ -54,5 +55,11 @@ public class Member {
 	}
 	public void setNumberOfBoard(int numberOfBoard) {
 		this.numberOfBoard = numberOfBoard;
+	}
+	public String getUsergender() {
+		return usergender;
+	}
+	public void setUsergender(String usergender) {
+		this.usergender = usergender;
 	}
 }

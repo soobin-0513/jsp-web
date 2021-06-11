@@ -12,20 +12,26 @@
 
 <%@ include file="/WEB-INF/subModules/bootstrapHeader.jsp" %>
 
-<title>I로그인페이지 </title>
+<title> 로그인페이지 </title>
 </head>
 <body>
 	<div class="container">
-	<s2:navbar></s2:navbar>
-		<h1>로그인 </h1>
-		<form method="post" action="${pageContext.request.contextPath }/sample2/member/login">
-			id <br>
-			<input type="text" name="id" > <br>
-			pw <br>
-			<input type="password" name="password"> <br>
-			<input type="submit" value="로그인">
-	</form>
-	<s2:message></s2:message>
+		<s2:navbar></s2:navbar>
+		<div class="jumbotron" style="background-color:#ecf4f7">
+			<div class="row justify-content-center">
+				<div class="col-8">
+				<h1>로그인   </h1>
+					<form method="post" action="${pageContext.request.contextPath }/sample2/member/login">
+						<label class="mt-1 mb-1"for="idinput">아이디 </label><br>
+						<input type="text" class="form-control" name="id" id="idinput" >
+						<label class="mt-1 mb-1" for="password" >비밀번호 </label>
+						<input class="form-control" type="password" name="password" id="password"/> <br>
+						<input type="submit" class="btn btn-primary btn-lg mt-3" value="로그인">
+					</form>
+				</div>
+			</div>
+			<s2:message></s2:message>
+		</div>
 	</div>
 </body>
 </html>

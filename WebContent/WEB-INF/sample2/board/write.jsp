@@ -17,14 +17,22 @@
 <body>
 	<div class="container">
 	<s2:navbar></s2:navbar>
-		<h1>글 작성 </h1>
-		<form action="${pageContext.request.contextPath }/sample2/board/write" method="post">
-			제목 : <br>
-			<input type ="text" name="title" id="input1"/><br>
-			본문 : <br>
-			<textarea name="body" id="textarea1"></textarea><br>
-			<input type="submit" value="작성하기 "/>
-		</form>
+		<div class="jumbotron" style="background-color:#ecf4f7" >
+			<div class="row justify-content-center">
+				<div class="col-8">
+					<h1>글 작성 </h1>
+						<form action="${pageContext.request.contextPath }/sample2/board/write" method="post">
+						제목 : <br>
+						<input class="form-control" type ="text" name="title" id="input1"/><br>
+						 <div class="form-group">
+	    					<label for="exampleFormControlTextarea1">내용 작성 </label>
+	    					<textarea class="form-control" name="body" id="textarea1" rows="5"></textarea>
+	  					</div>
+						<input class="btn btn-primary btn-lg mt-3" type="submit" value="작성하기 "/>
+						</form>
+				</div>
+			</div>
+		</div>
 	</div>
 </body>
 </html>

@@ -16,32 +16,33 @@
 </head>
 <body>
 	<div class="container">
-	<s2:navbar></s2:navbar>
-		<table class="table">
-			<thead>
-				<tr>
-					<th>#</th>
-					<th>ID</th>
-					<th>PW</th>
-					<th>NAME</th>
-					<th>BIRTH</th>
-					
-					<th>INSERTHE</th>
-				</tr>
-			</thead>
-			<tbody>
-				<c:forEach items="${members }" var="member" varStatus="status">
-				<tr>
-					<td>${status.count }</td>
-					<td>${member.id }</td>
-					<td>${member.password }</td>
-					<td>${member.name }</td>
-					<td>${member.birth }</td>
-					<td>${member.inserted }</td>
-				</tr>
-			</c:forEach>	
-			</tbody>
-		</table>
+		<s2:navbar></s2:navbar>
+		<div class="jumbotron" style="background-color:#ecf4f7">
+		<h1>회원목록  </h1>
+			<table class="table">
+				<thead>
+					<tr>
+						<th>#</th>
+						<th>ID</th>
+						<th>NAME</th>
+						<th>BIRTH</th>
+						
+						<th>INSERTHE</th>
+					</tr>
+				</thead>
+				<tbody>
+					<c:forEach items="${members }" var="member" varStatus="status">
+					<tr>
+						<td>${status.count }</td>
+						<td>${member.id }</td>
+						<td>${member.name }</td>
+						<td>${member.birth }</td>
+						<td>${member.inserted }</td>
+					</tr>
+				</c:forEach>	
+				</tbody>
+			</table>
+		</div>
 	</div>
 </body>
 </html>

@@ -12,11 +12,12 @@
 
 <%@ include file="/WEB-INF/subModules/bootstrapHeader.jsp" %>
 
-<title>Insert title here</title>
+<title>글 목록</title>
 </head>
 <body>
 	<div class="container">
 	<s2:navbar></s2:navbar>
+	<div class="jumbotron" style="background-color:#ecf4f7" >
 		<h1>글 목록 </h1>
 		<small>게시물 갯수 [${totalNum }]</small>
 		<table class="table">
@@ -38,7 +39,9 @@
 							<a href="<%= request.getContextPath() %>/sample2/board/detail?id=${board.boardId}">
 							${board.title }
 							</a>
-							<span>[${board.numberOfComment }]</span>
+							<c:if test="${board.numberOfComment != 0 }">
+								<span><i class="far fa-comment-dots"></i>[${board.numberOfComment }]</span>
+							</c:if>
 						</td>
 						<td>${board.memberName}</td>
 						<%-- <td>${board.memberIdHidden }</td>--%>
@@ -49,5 +52,6 @@
 		</table>
 	</div>
 	<s2:message/>
+	</div>
 </body>
 </html>

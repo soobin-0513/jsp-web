@@ -111,8 +111,8 @@
 				  <label class="mt-1 mb-1" >성별 </label>
 				  <select class="custom-select" name="usergender" >
 				    <option selected value="0">선택 </option>
-				    <option value="1">남자 </option>
-				    <option value="2">여자 </option>
+				    <option value="M">남자 </option>
+				    <option value="F">여자 </option>
 				  </select>
 				 
 			     <br>

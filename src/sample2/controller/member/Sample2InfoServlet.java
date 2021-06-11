@@ -56,6 +56,8 @@ public class Sample2InfoServlet extends HttpServlet {
 			// dao말고 서비스에 따로 빼줘서 서비스로 일시키기 ? 
 			Member mem = service.getMember(member.getId());
 			
+			System.out.println(mem.getUsergender());
+			
 			request.setAttribute("member", mem);
 			String path = "/WEB-INF/sample2/member/info.jsp";
 			request.getRequestDispatcher(path).forward(request, response);

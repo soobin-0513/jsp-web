@@ -32,9 +32,9 @@ public class MemberDao {
 
 	public boolean insert(Member member) {
 		String sql = "INSERT INTO Member "
-				+ "(id, password, name, birth, inserted) "
+				+ "(id, password, name, birth, usergender, inserted) "
 				+ "VALUES "
-				+ "(?, ?, ?, ?, NOW()) ";
+				+ "(?, ?, ?, ?, ?, NOW()) ";
 
 		Connection con = null;
 		PreparedStatement pstmt = null;
@@ -47,6 +47,7 @@ public class MemberDao {
 			pstmt.setString(2, member.getPassword());
 			pstmt.setString(3, member.getName());
 			pstmt.setDate(4, member.getBirth());
+			pstmt.setString(5, member.getUsergender());
 
 			int cnt = pstmt.executeUpdate();
 
@@ -149,7 +150,8 @@ public class MemberDao {
 		String sql = "UPDATE Member "
 				+ "SET password = ?, "
 				+ "    name = ?, "
-				+ "    birth = ? "
+				+ "    birth = ?, "
+				+ "    usergender = ? "
 				+ "WHERE id = ? ";
 		
 		Connection con = null;
@@ -164,7 +166,8 @@ public class MemberDao {
 			pstmt.setString(1, member.getPassword());
 			pstmt.setString(2, member.getName());
 			pstmt.setDate(3, member.getBirth());
-			pstmt.setString(4, member.getId());
+			pstmt.setString(4, member.getUsergender());
+			pstmt.setString(5, member.getId());
 
 			int cnt = pstmt.executeUpdate();
 			
@@ -296,7 +299,7 @@ public class MemberDao {
 	}
 
 		public Member getMember(String id, Connection con) {
-			String sql = "SELECT id, password, name, birth, inserted "
+			String sql = "SELECT id, password, name, birth, usergender, inserted "
 					+ "FROM Member "
 					+ "WHERE id = ?";
 			
@@ -314,7 +317,10 @@ public class MemberDao {
 					member.setPassword(rs.getString(2));
 					member.setName(rs.getString(3));
 					member.setBirth(rs.getDate(4));
-					member.setInserted(rs.getTimestamp(5));
+					member.setUsergender(rs.getString(5));
+					member.setInserted(rs.getTimestamp(6));
+					
+					System.out.println(rs.getString(5));
 					
 					return member;
 				}

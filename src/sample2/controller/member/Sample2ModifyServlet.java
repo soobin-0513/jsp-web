@@ -45,12 +45,14 @@ public class Sample2ModifyServlet extends HttpServlet {
 		String password = request.getParameter("password");
 		String name = request.getParameter("name");
 		String birth = request.getParameter("birth");
+		String usergender = request.getParameter("usergender");
 		
 		Member member = new Member();
 		member.setId(id);
 		member.setPassword(password);
 		member.setName(name);
 		member.setBirth(Date.valueOf(birth));
+		member.setUsergender(usergender);
 		
 		MemberDao dao = new MemberDao();
 		boolean ok = dao.update(member);
