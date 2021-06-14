@@ -28,7 +28,7 @@ public class BoardDto {
 		long diff = now -inserted;
 		
 		//천으로 나누면 초단위가 됨 
-		diff /= 100;
+		diff /= 1000;
 		
 		//한시간으로 나누면 
 		if(diff< 60 * 60) {

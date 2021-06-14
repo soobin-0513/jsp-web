@@ -24,7 +24,7 @@
 			  <hr class="my-4">
 			  <p>아직 많이 부족하지만,더 열심히 공부해서 발전하겠습니다.</p>
 			  <p> 회원가입부터 해보세요!! 감사합니다 <i class="far fa-smile-wink"></i>  </p>
-			  <a class="btn btn-primary btn-lg" href="#" role="button">회원가입 </a><br>
+			  <a class="btn btn-primary btn-lg" href="<%= request.getContextPath() %>/sample2/member/signup" role="button">회원가입 </a><br>
 			  <img src="${pageContext.request.contextPath }/res/image/hellobar.png" alt="helloimg" width="80%">
 			  <hr>
 		</div>
