@@ -1,4 +1,4 @@
-package soobinEX.member.been;
+package soobinEX.member.bean;
 
 public class Member {
 	private String userid;

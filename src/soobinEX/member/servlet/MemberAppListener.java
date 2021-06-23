@@ -9,7 +9,7 @@ import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
 
 import soobinEX.board.Board;
-import soobinEX.member.been.Member;
+import soobinEX.member.bean.Member;
 
 /**
  * Application Lifecycle Listener implementation class MemberAppListener

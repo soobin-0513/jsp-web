@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import soobinEX.member.been.Member;
+import soobinEX.member.bean.Member;
 
 /**
  * Servlet implementation class MemberLoginAction

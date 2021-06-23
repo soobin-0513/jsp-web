@@ -6,3 +6,5 @@ DESC Member;
 commit;
 
 update Member set usergender = '여' where usergender is null;
+
+select * from Board;

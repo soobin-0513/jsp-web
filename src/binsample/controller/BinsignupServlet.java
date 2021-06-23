@@ -1,28 +1,23 @@
-package soobinEX.member.servlet;
+package binsample.controller;
 
 import java.io.IOException;
-import java.util.List;
-
-import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import soobinEX.member.bean.Member;
-
 /**
- * Servlet implementation class MemberDetailServlet
+ * Servlet implementation class BinsignupServlet
  */
-@WebServlet("/soobinEX/member/memberdetail")
-public class MemberDetailServlet extends HttpServlet {
+@WebServlet("/binsample/member/signup")
+public class BinsignupServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public MemberDetailServlet() {
+    public BinsignupServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -31,22 +26,8 @@ public class MemberDetailServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//한글 깨지기 방지 
-				request.setCharacterEncoding("utf-8");
-				
-				String index = request.getParameter("index");
-				
-				System.out.println(index);
-				
-				ServletContext application = request.getServletContext();
-				List<Member> memberlist = (List<Member>) application.getAttribute("members");
-				
-				int i = Integer.parseInt(index);
-				Member member = memberlist.get(i);
-				request.setAttribute("member", member);
-				
-				String path="/soobinEX/member/memberDetail.jsp";
-				request.getRequestDispatcher(path).forward(request, response);
+		// TODO Auto-generated method stub
+		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
 	/**
